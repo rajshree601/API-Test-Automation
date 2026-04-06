@@ -119,12 +119,12 @@ This project also includes a Postman collection with:
 
 ## Key Features
 
-* ✔ BDD implementation using Cucumber
-* ✔ Reusable and scalable framework
-* ✔ Dynamic data generation
-* ✔ API chaining using extracted IDs
-* ✔ Maven-based execution
-* ✔ Reporting support
+* BDD implementation using Cucumber
+* Reusable and scalable framework
+* Dynamic data generation
+* API chaining using extracted IDs
+* Maven-based execution
+* Reporting support
 
 ---
 
