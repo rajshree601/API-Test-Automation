@@ -119,7 +119,7 @@ This project also includes a Postman collection with:
 
 ## Key Features
 
-* BDD implementation using Cucumber
+* Behaviour Driven Development (BDD) implementation using Cucumber
 * Reusable and scalable framework
 * Dynamic data generation
 * API chaining using extracted IDs
