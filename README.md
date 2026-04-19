@@ -160,11 +160,3 @@ This project also includes a Postman collection with:
 * Docker execution
 
 ---
-
-## Final Outcome
-
-* Fully functional API Automation Framework
-* All test scenarios successfully executed
-* Ready for demonstration, submission, and interviews
-
----
