@@ -33,18 +33,35 @@ It demonstrates real-world automation practices including:
 
 ```bash
 src
- └── test
-     ├── java
-     │   ├── base
-     │   ├── hooks
-     │   ├── runners
-     │   ├── stepDefinitions
-     │   ├── utils
-     │   └── pojo
-     └── resources
-         ├── features
-         ├── config
-         └── log4j.properties
+└── test
+    ├── java
+    │   ├── base
+    │   │   └── BaseTest.java
+    │   ├── hooks
+    │   │   └── Hooks.java
+    │   ├── runners
+    │   │   └── TestRunner.java
+    │   ├── stepDefinitions
+    │   │   ├── PetSteps.java
+    │   │   ├── StoreSteps.java
+    │   │   ├── UserSteps.java
+    │   │   └── CrossSteps.java
+    │   ├── utils
+    │   │   ├── RequestBuilder.java
+    │   │   └── ResponseUtils.java
+    │   └── pojo
+    │       ├── Pet.java
+    │       └── User.java
+    │
+    └── resources
+        ├── features
+        │   ├── pet.feature
+        │   ├── store.feature
+        │   ├── user.feature
+        │   └── cross.feature
+        ├── config
+        │   └── config.properties
+        └── log4j.properties
 ```
 
 ---
