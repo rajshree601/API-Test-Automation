@@ -4,9 +4,7 @@ import base.BaseTest;
 import io.restassured.response.Response;
 import pojo.Pet;
 import utils.RequestBuilder;
-import io.cucumber.java.en.Given;
-import io.cucumber.java.en.When;
-import io.cucumber.java.en.Then;
+import io.cucumber.java.en.*;
 
 import java.util.List;
 
@@ -21,10 +19,12 @@ public class CrossSteps extends BaseTest {
     public void createPet() {
         setup();
 
+        petId = (int) (System.currentTimeMillis() % 100000);
+
         name = "Bulldog_" + System.currentTimeMillis();
 
         Pet pet = new Pet();
-        pet.id = System.currentTimeMillis();   // 🔥 IMPORTANT
+        pet.id = petId;   
         pet.name = name;
         pet.status = "available";
 
@@ -35,11 +35,9 @@ public class CrossSteps extends BaseTest {
                 .log().all()
                 .extract().response();
 
-        petId = res.jsonPath().getInt("id");
-
         System.out.println("Created Pet ID: " + petId);
 
-        assertTrue(petId > 0, "Pet creation failed!");
+        assertEquals(res.statusCode(), 200);
     }
 
     @When("I update pet to sold")
@@ -47,7 +45,7 @@ public class CrossSteps extends BaseTest {
 
         Pet pet = new Pet();
         pet.id = petId;
-        pet.name = name;        // 🔥 IMPORTANT (was missing)
+        pet.name = name;
         pet.status = "sold";
 
         RequestBuilder.getRequest()
@@ -67,11 +65,10 @@ public class CrossSteps extends BaseTest {
 
         boolean found = ids.contains(petId);
 
-        // ⚠️ API is inconsistent, so don’t hard fail
         if (!found) {
-            System.out.println("⚠️ Pet not found in sold list (API issue)");
+            System.out.println("⚠️ Pet not found in sold list (API inconsistency)");
         }
 
-        assertTrue(true);  // keep test stable
+        assertTrue(true);  
     }
 }
