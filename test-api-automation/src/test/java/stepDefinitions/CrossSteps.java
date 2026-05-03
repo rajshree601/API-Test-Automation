@@ -66,7 +66,7 @@ public class CrossSteps extends BaseTest {
         boolean found = ids.contains(petId);
 
         if (!found) {
-            System.out.println("⚠️ Pet not found in sold list (API inconsistency)");
+            System.out.println("Pet not found in sold list (API inconsistency)");
         }
 
         assertTrue(true);  
