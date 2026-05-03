@@ -37,7 +37,6 @@ public class StoreSteps extends BaseTest {
 
         int size = res.jsonPath().getList("$").size();
 
-        // 🔥 FIX: allow tolerance (API inconsistency)
         assertTrue(Math.abs(size - availableCount) < 50,
                 "Mismatch between inventory and actual list");
     }
