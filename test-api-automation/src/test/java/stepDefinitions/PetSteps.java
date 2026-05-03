@@ -18,10 +18,10 @@ public class PetSteps extends BaseTest {
     public void createPet() {
         setup();
 
-        petId = (int) (System.currentTimeMillis() % 100000); // 🔥 FIX: ensure unique ID
+        petId = (int) (System.currentTimeMillis() % 100000); 
 
         Pet pet = new Pet();
-        pet.id = petId; // 🔥 IMPORTANT
+        pet.id = petId; 
         pet.name = name;
         pet.status = "available";
 
@@ -62,7 +62,6 @@ public class PetSteps extends BaseTest {
         response = RequestBuilder.getRequest().delete("/pet/" + petId);
         assertEquals(response.statusCode(), 200);
 
-        // 🔥 EXTRA VALIDATION (important for assignment)
         Response res = RequestBuilder.getRequest().get("/pet/" + petId);
         assertEquals(res.statusCode(), 404);
     }
